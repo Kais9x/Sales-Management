@@ -1,0 +1,502 @@
+{% extends "sales/head.html" %}
+{% load static %}
+{% block content %}
+<div id="home_page">
+    <div name="header" class="header d-flex sticky-top">
+        <div class=" col-12 col-xl-9 mx-auto d-flex justify-content-start align-items-center text-black pd-12">
+            <button class="btn btn-primary h-40" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#staticBackdrop"
+                    aria-controls="staticBackdrop" style="height: 40px;">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop"
+                 aria-labelledby="staticBackdropLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="staticBackdropLabel"><img class="h-40"
+                                                                              src="{% static 'image/logo/logo_sate.png' %}">
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="list-group list-group-flush mb-5">
+                        <button type="button" class="list-group-item list-group-item-action d-flex" aria-current="true"
+                                style="justify-content: space-between;">
+                            Home
+                            <i class="fa-solid fa-arrow-right fa-shake"></i>
+                        </button>
+                        <button type="button" class="list-group-item list-group-item-action d-flex" aria-current="true"
+                                style="justify-content: space-between;">
+                            Product portfolio
+                            <i class="fa-solid fa-arrow-right fa-shake"></i>
+                        </button>
+                        <button type="button" class="list-group-item list-group-item-action d-flex" aria-current="true"
+                                style="justify-content: space-between;">
+                            Cart
+                            <i class="fa-solid fa-arrow-right fa-shake"></i>
+                        </button>
+                        <button type="button" class="list-group-item list-group-item-action d-flex" aria-current="true"
+                                style="justify-content: space-between;">
+                            Hotline: +84985166472
+                            <i class="fa-solid fa-arrow-right fa-shake"></i>
+                        </button>
+                    </div>
+
+                    <div class="contact">
+                        <p>Copyright © 2017 All rights reserved by Sateraito Office inc.</p>
+                        <p>The content herein will be updated withouth any notification. Please kindly contact us for
+                            more
+                            details.</p>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-lg text-black col">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <a class="navbar-brand" href="#">
+                            <img class="h-40" src="{% static 'image/logo/logo_sate.png' %}">
+                        </a>
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="circle-icon"><i class="fa-sharp fa-solid fa-user-tie"></i></span>
+                                    Login / Register
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li class="mb-2"><p>Login with</p></li>
+                                    <li class="mb-2 line-bot">
+                                        <div class="d-flex pd-bot-12">
+                                            <a class="dropdown-item w-100 p-0" href="#"
+                                               style="padding: 0px; margin-right: 12px;">
+                                                <button class="btn btn-primary btn-fb w-100">
+                                                    <span><i class="fa-brands fa-facebook"></i></span>
+                                                    <span>Facebook</span></span>
+                                                </button>
+                                            </a>
+                                            <a class="dropdown-item w-100 p-0" href="#" style="padding: 0px">
+                                                <button class="btn btn-danger btn-gg w-100">
+                                                    <span><i class="fa-brands fa-google"></i></span>
+                                                    <span>Google</span></span>
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="mb-2"><p>Or login with Sateraito Office</p></li>
+                                    <li class="mb-2"><a class="dropdown-item w-100 p-0" href="#" style="padding: 0px">
+                                        <button class="btn btn-success w-100">Login</button>
+                                    </a></li>
+                                    <li style="height: 20px;"><a class="" href="#" style="font-size: 12px;">Register
+                                        now</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><span class="circle-icon"><i
+                                        class="fa-solid fa-store"></i></span> Shop system</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><span class="circle-icon"><i
+                                        class="fa-solid fa-headset"></i></span> Customer support</a>
+                            </li>
+                            <li class="nav-item" style="position: relative;">
+                                <a class="nav-link" href="#"><span class="circle-icon"><i
+                                        class="fa-solid fa-cart-shopping"></i></span></a>
+                                <template v-if="count_cart > 0"><span class="counter_number">[[count_cart]]</span></template>
+                            </li>
+                            <li class="nav-item" hidden>
+                                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-success btn-outline-success text-white" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+
+        <div name="body" style="">
+            <div id="myCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
+                            aria-current="true"
+                            aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3"
+                            aria-label="Slide 4"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{% static 'image/image/banner/main_01.jpg' %}" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>First slide label</h5>
+                            <p>Some representative placeholder content for the first slide.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'image/image/banner/main_02.jpg' %}" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Second slide label</h5>
+                            <p>Some representative placeholder content for the second slide.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'image/image/banner/main_03.jpg' %}" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Third slide label</h5>
+                            <p>Some representative placeholder content for the third slide.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'image/image/banner/main_04.jpg' %}" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>4th slide label</h5>
+                            <p>Some representative placeholder content for the 4th slide.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="mb-4 dm-quan-tam">
+            <h3 class="title-quan-tam">Danh mục bạn quan tâm</h3>
+            <div class="d-flex row col-11 mx-auto pd-36-12" style="justify-content: space-between;">
+                <div class="sp-quan-tam d-flex flex-column col-2 align-items-center">
+                    <img src="{% static 'image/image/store/goods_01.jpg' %}">
+                    <h6 class="tit-sp-quan-tam">Sữa rửa mặt</h6>
+                </div>
+                <div class="sp-quan-tam d-flex flex-column col-2 align-items-center">
+                    <img src="{% static 'image/image/store/goods_02.jpg' %}">
+                    <h6 class="tit-sp-quan-tam">Chống nắng da mặt</h6>
+                </div>
+                <div class="sp-quan-tam d-flex flex-column col-2 align-items-center">
+                    <img src="{% static 'image/image/store/goods_03.jpg' %}">
+                    <h6 class="tit-sp-quan-tam">Kem dưỡng / Dầu dưỡng</h6>
+                </div>
+                <div class="sp-quan-tam d-flex flex-column col-2 align-items-center">
+                    <img src="{% static 'image/image/store/goods_04.jpg' %}">
+                    <h6 class="tit-sp-quan-tam">Serum / Tinh chất</h6>
+                </div>
+                <div class="sp-quan-tam d-flex flex-column col-2 align-items-center">
+                    <img src="{% static 'image/image/store/goods_05.jpg' %}">
+                    <h6 class="tit-sp-quan-tam">Bông tẩy trang</h6>
+                </div>
+                <div class="sp-quan-tam d-flex flex-column col-2 align-items-center">
+                    <img src="{% static 'image/image/store/goods_06.jpg' %}">
+                    <h6 class="tit-sp-quan-tam">Son kem</h6>
+                </div>
+                <div class="sp-quan-tam d-flex flex-column col-2 align-items-center">
+                    <img src="{% static 'image/image/store/goods_07.jpg' %}">
+                    <h6 class="tit-sp-quan-tam">Dầu gội</h6>
+                </div>
+                <div class="sp-quan-tam d-flex flex-column col-2 align-items-center">
+                    <img src="{% static 'image/image/store/goods_08.jpg' %}">
+                    <h6 class="tit-sp-quan-tam">Dầu xả</h6>
+                </div>
+                <div class="sp-quan-tam d-flex flex-column col-2 align-items-center">
+                    <img src="{% static 'image/image/store/goods_09.jpg' %}">
+                    <h6 class="tit-sp-quan-tam">Sữa tắm</h6>
+                </div>
+                <div class="sp-quan-tam d-flex flex-column col-2 align-items-center">
+                    <img src="{% static 'image/image/store/goods_10.jpg' %}">
+                    <h6 class="tit-sp-quan-tam">Tẩy tế bào chết toàn thân</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <h4 class="title-quan-tam" style="text-align: center;">------ Gợi ý cho bạn ------</h4>
+            <div id="carouselExample" class="carousel" data-bs-ride="carousel" data-bs-interval="false">
+                <div class="carousel-inner item-store">
+                    <div class="carousel-item item-store active">
+                        <div class="card item-store item-store">
+                            <img src="{% static 'image/image/store2/goods_0001.png' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title item-store">239.000 ₫</h5>
+                                <h6 class="item-store">Card 1</h6>
+                                <p class="card-text">Some quick example text to build on the card ...</p>
+                                <a href="#" class="btn btn-primary">Add to cart <i
+                                        class="fa-sharp fa-solid fa-cart-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item item-store">
+                        <div class="card item-store item-store">
+                            <img src="{% static 'image/image/store2/goods_0002.png' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title item-store">245.000 ₫</h5>
+                                <h6 class="item-store">Card 2</h6>
+                                <p class="card-text">Some quick example text to build on the card ...</p>
+                                <a href="#" class="btn btn-primary">Add to cart <i
+                                        class="fa-sharp fa-solid fa-cart-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item item-store">
+                        <div class="card item-store item-store">
+                            <img src="{% static 'image/image/store2/goods_0003.png' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title item-store">222.000 ₫</h5>
+                                <h6 class="item-store">Card 3</h6>
+                                <p class="card-text">Some quick example text to build on the card ...</p>
+                                <a href="#" class="btn btn-primary">Add to cart <i
+                                        class="fa-sharp fa-solid fa-cart-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item item-store">
+                        <div class="card item-store item-store">
+                            <img src="{% static 'image/image/store2/goods_0004.png' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title item-store">234.000 ₫</h5>
+                                <h6 class="item-store">Card 4</h6>
+                                <p class="card-text">Some quick example text to build on the card ...</p>
+                                <a href="#" class="btn btn-primary">Add to cart <i
+                                        class="fa-sharp fa-solid fa-cart-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item item-store">
+                        <div class="card item-store item-store">
+                            <img src="{% static 'image/image/store2/goods_0005.png' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title item-store">145.000 ₫</h5>
+                                <h6 class="item-store">Card 5</h6>
+                                <p class="card-text">Some quick example text to build on the card ...</p>
+                                <a href="#" class="btn btn-primary">Add to cart <i
+                                        class="fa-sharp fa-solid fa-cart-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item item-store">
+                        <div class="card item-store item-store">
+                            <img src="{% static 'image/image/store2/goods_0006.png' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title item-store">168.000 ₫</h5>
+                                <h6 class="item-store">Card 6</h6>
+                                <p class="card-text">Some quick example text to build on the card ...</p>
+                                <a href="#" class="btn btn-primary">Add to cart <i
+                                        class="fa-sharp fa-solid fa-cart-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item item-store">
+                        <div class="card item-store item-store">
+                            <img src="{% static 'image/image/store2/goods_0007.png' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title item-store">177.000 ₫</h5>
+                                <h6 class="item-store">Card 7</h6>
+                                <p class="card-text">Some quick example text to build on the card ...</p>
+                                <a href="#" class="btn btn-primary">Add to cart <i
+                                        class="fa-sharp fa-solid fa-cart-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item item-store">
+                        <div class="card item-store item-store">
+                            <img src="{% static 'image/image/store2/goods_0008.png' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title item-store">189.000 ₫</h5>
+                                <h6 class="item-store">Card 8</h6>
+                                <p class="card-text">Some quick example text to build on the card ...</p>
+                                <a href="#" class="btn btn-primary">Add to cart <i
+                                        class="fa-sharp fa-solid fa-cart-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item item-store">
+                        <div class="card item-store item-store">
+                            <img src="{% static 'image/image/store2/goods_0009.png' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title item-store">121.000 ₫</h5>
+                                <h6 class="item-store">Card 9</h6>
+                                <p class="card-text">Some quick example text to build on the card ...</p>
+                                <a href="#" class="btn btn-primary">Add to cart <i
+                                        class="fa-sharp fa-solid fa-cart-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item item-store">
+                        <div class="card item-store item-store">
+                            <img src="{% static 'image/image/store2/goods_0010.png' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title item-store">349.000 ₫</h5>
+                                <h6 class="item-store">Card 10</h6>
+                                <p class="card-text">Some quick example text to build on the card ...</p>
+                                <a href="#" class="btn btn-primary">Add to cart <i
+                                        class="fa-sharp fa-solid fa-cart-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item item-store">
+                        <div class="card item-store item-store">
+                            <img src="{% static 'image/image/store2/goods_0011.png' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title item-store">311.000 ₫</h5>
+                                <h6 class="item-store">Card 11</h6>
+                                <p class="card-text">Some quick example text to build on the card ...</p>
+                                <a href="#" class="btn btn-primary">Add to cart <i
+                                        class="fa-sharp fa-solid fa-cart-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item item-store">
+                        <div class="card item-store item-store">
+                            <img src="{% static 'image/image/store2/goods_0012.png' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title item-store">377.000 ₫</h5>
+                                <h6 class="item-store">Card 12</h6>
+                                <p class="card-text">Some quick example text to build on the card ...</p>
+                                <a href="#" class="btn btn-primary">Add to cart <i
+                                        class="fa-sharp fa-solid fa-cart-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item item-store">
+                        <div class="card item-store item-store">
+                            <img src="{% static 'image/image/store2/goods_0013.png' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title item-store">399.000 ₫</h5>
+                                <h6 class="item-store">Card 13</h6>
+                                <p class="card-text">Some quick example text to build on the card ...</p>
+                                <a href="#" class="btn btn-primary">Add to cart <i
+                                        class="fa-sharp fa-solid fa-cart-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item item-store">
+                        <div class="card item-store item-store">
+                            <img src="{% static 'image/image/store2/goods_0003.png' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title item-store">179.000 ₫</h5>
+                                <h6 class="item-store">Card 14</h6>
+                                <p class="card-text">Some quick example text to build on the card ...</p>
+                                <a href="#" class="btn btn-primary">Add to cart <i
+                                        class="fa-sharp fa-solid fa-cart-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item item-store">
+                        <div class="card item-store item-store">
+                            <img src="{% static 'image/image/store2/goods_0014.png' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title item-store">288.000 ₫</h5>
+                                <h6 class="item-store">Card 15</h6>
+                                <p class="card-text">Some quick example text to build on the card ...</p>
+                                <a href="#" class="btn btn-primary">Add to cart <i
+                                        class="fa-sharp fa-solid fa-cart-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev item-store" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next item-store" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="pd-12">
+            <h4 class="title-hot" style="text-align: center;">------ Sản phẩm hot ------</h4>
+            <div class="row" style="margin-bottom: 186px;">
+                <template v-for="(item, index) in data_cart" :key="item.id">
+                    <div class="col-2 mb-3">
+                        <div class="card item-store item-store">
+                            <img :src="item.image_commodity" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title item-store">[[item.price]]</h5>
+                                <h6 class="item-store">[[item.commodity_name]]</h6>
+                                <p class="card-text" hidden="hidden">[[item.description]]</p>
+                                <a @click="addShoppingCarts()" class="btn btn-primary">Add to cart <i
+                                        class="fa-sharp fa-solid fa-cart-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+    <div name="right" class="righter">
+    <span><i class="fa-solid fa-envelope fa-bounce" data-bs-toggle="tooltip" data-bs-placement="left"
+             title="Contact us!"></i></span>
+        <span><i class="fa-solid fa-phone-volume fa-beat" data-bs-toggle="tooltip" data-bs-placement="left"
+                 title="Call me!"></i></span>
+    </div>
+    <div name="footer" class="footer pd-12 fixed-bottom">
+        <div class="row col-12 mx-auto">
+            <div class="col-1 align-items-center d-flex flex-column pd-12">
+                <img src="{% static 'image/icon/icon_footer_1.svg' %}">
+                <h6 class="" style="text-align: center; padding: 12px 0 0 0;">Thanh toán khi nhận hàng</h6>
+            </div>
+            <div class="col-1 align-items-center d-flex flex-column pd-12">
+                <img src="{% static 'image/icon/icon_footer_2.svg' %}">
+                <h6 class="" style="text-align: center; padding: 12px 0 0 0;">Now Free 2H</h6>
+            </div>
+            <div class="col-1 align-items-center d-flex flex-column pd-12">
+                <img src="{% static 'image/icon/icon_footer_3.svg' %}">
+                <h6 class="" style="text-align: center; padding: 12px 0 0 0;">14 ngày đổi trả miễn phí</h6>
+            </div>
+            <div class="col-1 align-items-center d-flex flex-column pd-12">
+                <img src="{% static 'image/icon/icon_footer_4.svg' %}">
+                <h6 class="" style="text-align: center; padding: 12px 0 0 0;">Thương hiệu uy tín toàn cầu</h6>
+            </div>
+            <div class="col-4 pd-12 row d-flex">
+                <div class="btn-footer-left col-6">
+                    <p>
+                        <i class="fa-regular fa-circle-question"></i>
+                        Khiếu nại, góp ý
+                    </p>
+                    <p>
+                        18097XXX
+                    </p>
+                </div>
+                <div class="btn-footer-right col-6">
+                    <p>
+                        <i class="fa-sharp fa-solid fa-phone-volume"></i>
+                        Tư vấn
+                    </p>
+                    <p>
+                        19357XXX
+                    </p>
+                </div>
+            </div>
+            <div class="col pd-12">
+                <div class="contact" style="height: 100%">
+                    <p>Copyright © 2017 All rights reserved by Sateraito Office inc.</p>
+                    <p>The content herein will be updated withouth any notification. Please kindly contact us for more
+                        details.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div hidden="hidden">
+        <li>
+            <span>Commodities: </span><span id="data-com">{{data_com}}</span>
+        </li>
+    </div>
+
+</div>
+<script src=
+                "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock %}

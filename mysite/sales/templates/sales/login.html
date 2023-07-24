@@ -1,0 +1,330 @@
+{% extends "sales/head.html" %}
+{% load static %}
+{% block content %}
+<div id="login_page">
+    <div name="header" class="header d-flex sticky-top">
+        <div class=" col-12 col-xl-9 mx-auto d-flex justify-content-start align-items-center text-black pd-12">
+            <button class="btn btn-primary h-40" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#staticBackdrop"
+                    aria-controls="staticBackdrop" style="height: 40px;">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop"
+                 aria-labelledby="staticBackdropLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="staticBackdropLabel"><img class="h-40"
+                                                                              src="{% static 'image/logo/logo_sate.png' %}">
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="list-group list-group-flush mb-5">
+                        <button type="button" class="list-group-item list-group-item-action d-flex" aria-current="true"
+                                style="justify-content: space-between;">
+                            Home
+                            <i class="fa-solid fa-arrow-right fa-shake"></i>
+                        </button>
+                        <button type="button" class="list-group-item list-group-item-action d-flex" aria-current="true"
+                                style="justify-content: space-between;">
+                            Product portfolio
+                            <i class="fa-solid fa-arrow-right fa-shake"></i>
+                        </button>
+                        <button type="button" class="list-group-item list-group-item-action d-flex" aria-current="true"
+                                style="justify-content: space-between;">
+                            Cart
+                            <i class="fa-solid fa-arrow-right fa-shake"></i>
+                        </button>
+                        <button type="button" class="list-group-item list-group-item-action d-flex" aria-current="true"
+                                style="justify-content: space-between;">
+                            Hotline: +84985166472
+                            <i class="fa-solid fa-arrow-right fa-shake"></i>
+                        </button>
+                    </div>
+
+                    <div class="contact">
+                        <p>Copyright © 2017 All rights reserved by Sateraito Office inc.</p>
+                        <p>The content herein will be updated withouth any notification. Please kindly contact us for
+                            more
+                            details.</p>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-lg text-black col">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <a class="navbar-brand" href="#">
+                            <img class="h-40" src="{% static 'image/logo/logo_sate.png' %}">
+                        </a>
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="circle-icon"><i class="fa-sharp fa-solid fa-user-tie"></i></span>
+                                    Login / Register
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li class="mb-2"><p>Login with</p></li>
+                                    <li class="mb-2 line-bot">
+                                        <div class="d-flex pd-bot-12">
+                                            <a class="dropdown-item w-100 p-0" href="#"
+                                               style="padding: 0px; margin-right: 12px;">
+                                                <button class="btn btn-primary btn-fb w-100">
+                                                    <span><i class="fa-brands fa-facebook"></i></span>
+                                                    <span>Facebook</span></span>
+                                                </button>
+                                            </a>
+                                            <a class="dropdown-item w-100 p-0" href="#" style="padding: 0px">
+                                                <button class="btn btn-danger btn-gg w-100">
+                                                    <span><i class="fa-brands fa-google"></i></span>
+                                                    <span>Google</span></span>
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="mb-2"><p>Or login with Sateraito Office</p></li>
+                                    <li class="mb-2"><a class="dropdown-item w-100 p-0" href="#" style="padding: 0px">
+                                        <button class="btn btn-success w-100">Login</button>
+                                    </a></li>
+                                    <li style="height: 20px;"><a class="" href="#" style="font-size: 12px;">Register
+                                        now</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><span class="circle-icon"><i
+                                        class="fa-solid fa-store"></i></span> Shop system</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><span class="circle-icon"><i
+                                        class="fa-solid fa-headset"></i></span> Customer support</a>
+                            </li>
+                            <li class="nav-item" style="position: relative;">
+                                <a class="nav-link" href="#"><span class="circle-icon"><i
+                                        class="fa-solid fa-cart-shopping"></i></span></a>
+                                <span class="counter_number">2</span>
+                            </li>
+                            <li class="nav-item" hidden>
+                                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-success btn-outline-success text-white" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="container" style="padding: 72px 0px 112px 0; background-color: #fbfbfb;">
+        <div class="login d-flex flex-row align-items-center col-11">
+            <div class="login-text col-8">
+                <p class="title-login">Phongphok</p>
+                <p class="text-login">Luôn luôn lắng nghe sẵn sàng chia sẻ, hứa không cười ỉe.</p>
+                <p class="text-login">Kết nối và chia sẻ với bạn mọi lúc.</p>
+            </div>
+            <div class="col">
+                <div class="login-card">
+                    <div class="mb-2" style="position: relative">
+                        <input v-bind:style="[user_login.check_status == true ? {backgroundColor: '#ffd5a3', border: '1px solid #ffa707'} : {}]"
+                               class="form-control email" type="text" placeholder="Email" v-model="user_login.email">
+                        <i v-bind:style="[user_login.check_status == true ? {display: 'block'} : {}]"
+                           data-bs-toggle="popover" data-bs-trigger="hover focus"
+                           data-bs-content="Tài khoản hoặc mật khẩu không đúng"
+                           class="fa-solid fa-circle-info error" style=""></i>
+                    </div>
+                    <div class="mb-2" style="position: relative">
+                        <input v-bind:style="[user_login.check_status == true ? {backgroundColor: '#ffd5a3', border: '1px solid #ffa707'} : {}]"
+                               class="form-control password mb-2" type="password" placeholder="Mật Khẩu"
+                               v-model="user_login.password">
+                        <i v-bind:style="[user_login.check_status == true ? {display: 'block'} : {}]"
+                           data-bs-toggle="popover" data-bs-trigger="hover focus"
+                           data-bs-content="Tài khoản hoặc mật khẩu không đúng"
+                           class="fa-solid fa-circle-info error" style=""></i>
+                    </div>
+                    <button class="btn btn-primary btn-login fw-bold mb-2" type="button" @click="login">Đăng nhập
+                    </button>
+                    <div class="" style="color: #0d6efd; text-align: center; font-size: 14px;">
+                        <a>Quên mật khẩu
+                            <a tabindex="0" class="" role="button" data-bs-toggle="popover"
+                               data-bs-trigger="focus" data-bs-title="Lấy lại mật khẩu?"
+                               data-bs-content="Hãy truy cập hoặc liên hệ nhân viên tư vấn để được hỗ trợ lấy lại mật khẩu cá nhân!"><i
+                                    class="fa-solid fa-circle-question fa-beat" style="color: #919191;"></i></a></a>
+                    </div>
+                    <div class="d-flex w-100 mb-3" style="padding: 12px 0px">
+                        <span class="line-login w-100"></span>
+                    </div>
+                    <button class="btn btn-success btn-login fw-bold mb-3" type="button"
+                            data-bs-toggle="modal" data-bs-target="#exampleModal">Tạo tài khoản mới
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+             aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header" style="align-items: flex-start;">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                            <span class="fs-28 fw-bold" style="">Đăng ký</span><br>
+                            <span class="fs-16" style="">Nhanh chóng và dễ dàng</span>
+                        </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form d-flex col-12 mb-2">
+                            <div class="col-6 d-flex pd-0-12" style="position: relative;">
+                                <input v-bind:style="[register_user.first_name == '' && register_user.check_status == true ? {backgroundColor: '#ffd5a3', border: '1px solid #ffa707'} : {}]"
+                                       name="fist_name" type="text" class="form-control email mb-2 w-100"
+                                       placeholder="Họ"
+                                       v-model="register_user.first_name">
+                                <i v-bind:style="[register_user.first_name == '' && register_user.check_status == true ? {display: 'block'} : {}]"
+                                   data-bs-toggle="popover" data-bs-trigger="hover focus"
+                                   data-bs-content="Điền họ của bạn vào đây"
+                                   class="fa-solid fa-circle-info error" style=""></i>
+                            </div>
+                            <div class="col-6 pd-0-12" style="position: relative;">
+                                <input v-bind:style="[register_user.last_name == '' && register_user.check_status == true ? {backgroundColor: '#ffd5a3', border: '1px solid #ffa707'} : {}]"
+                                       name="last_name" type="text" class="form-control email mb-2 w-100"
+                                       placeholder="Tên"
+                                       v-model="register_user.last_name">
+                                <i v-bind:style="[register_user.last_name == '' && register_user.check_status == true ? {display: 'block'} : {}]"
+                                   data-bs-toggle="popover" data-bs-trigger="hover focus"
+                                   data-bs-content="Điền tên của bạn vào đây"
+                                   class="fa-solid fa-circle-info error" style=""></i>
+                            </div>
+                        </div>
+                        <div class="col-12 pd-0-12 mb-2" style="position: relative;">
+                            <input v-bind:style="[register_user.email == '' && register_user.check_status == true ? {backgroundColor: '#ffd5a3', border: '1px solid #ffa707'} : {}]"
+                                   name="email" type="text" class="form-control email mb-2 col-12" placeholder="Email"
+                                   v-model="register_user.email">
+                            <i v-bind:style="[register_user.email == '' && register_user.check_status == true ? {display: 'block'} : {}]"
+                               data-bs-toggle="popover" data-bs-trigger="hover focus"
+                               data-bs-content="Điền Email của bạn vào đây"
+                               class="fa-solid fa-circle-info error" style=""></i>
+                        </div>
+                        <div class="col-12 pd-0-12 mb-2" style="position: relative;">
+                            <input v-bind:style="[register_user.password == '' && register_user.check_status == true ? {backgroundColor: '#ffd5a3', border: '1px solid #ffa707'} : {}]"
+                                   name="password" type="password" class="form-control email mb-2 col-12"
+                                   v-model="register_user.password"
+                                   placeholder="Password">
+                            <i v-bind:style="[register_user.password == '' && register_user.check_status == true ? {display: 'block'} : {}]"
+                               data-bs-toggle="popover" data-bs-trigger="hover focus"
+                               data-bs-content="Mật khẩu ít nhất có 8 chữ số và cả chữ hoa cùng chữ thường"
+                               class="fa-solid fa-circle-info error" style=""></i>
+                        </div>
+                        <div class="col-12 pd-0-12 mb-2" style="position: relative;">
+                            <input v-bind:style="[register_user.address == '' && register_user.check_status == true ? {backgroundColor: '#ffd5a3', border: '1px solid #ffa707'} : {}]"
+                                   name="address" type="text" class="form-control email mb-2 col-12"
+                                   v-model="register_user.address"
+                                   placeholder="Địa chỉ">
+                            <i v-bind:style="[register_user.address == '' && register_user.check_status == true ? {display: 'block'} : {}]"
+                               data-bs-toggle="popover" data-bs-trigger="hover focus"
+                               data-bs-content="Hãy nhập địa chỉ của bạn để có thể dễ dàng giao đồ cho bạn tới đúng nơi"
+                               class="fa-solid fa-circle-info error" style=""></i>
+                        </div>
+                        <div class="col-12 pd-0-12 mb-2" style="position: relative;">
+                            <input v-bind:style="[register_user.phone == '' && register_user.check_status == true ? {backgroundColor: '#ffd5a3', border: '1px solid #ffa707'} : {}]"
+                                   name="phone" type="text" class="form-control email mb-2 col-12"
+                                   v-model="register_user.phone"
+                                   placeholder="Số điện thoại">
+                            <i v-bind:style="[register_user.phone == '' && register_user.check_status == true ? {display: 'block'} : {}]"
+                               data-bs-toggle="popover" data-bs-trigger="hover focus"
+                               data-bs-content="Hãy nhập số điện thoại để shipper có thể gọi cho bạn"
+                               class="fa-solid fa-circle-info error" style=""></i>
+                        </div>
+                        <span class="pd-0-12">Sinh nhật
+                        <a tabindex="0" class="" role="button" data-bs-toggle="popover"
+                           data-bs-trigger="focus" data-bs-title="Điền thông tin ngày sinh!"
+                           data-bs-content="Cung cấp sinh nhật của bạn giúp đảm bảo bạn có được trải nghiệm Phongphok phù hợp với độ tuổi của mình. Nếu bạn muốn thay đổi người nhìn thấy thông tin này, hãy đi tới phần Giới thiệu trên trang cá nhân của bạn. Để biết thêm chi tiết, vui lòng truy cập vào Chính sách quyền riêng tư của chúng tôi."><i
+                                class="fa-solid fa-circle-question fa-beat" style="color: #919191;"></i></a></a></span>
+                        <div class="col-12 pd-0-12 mb-2">
+                            <input type="date" class="form-control email mb-2 col-12" placeholder="Họ"
+                                   v-model="register_user.birthday">
+                        </div>
+                        <span class="pd-0-12">User type
+                        <a tabindex="0" class="" role="button" data-bs-toggle="popover"
+                           data-bs-trigger="focus" data-bs-title="Chọn loại tài khoản!"
+                           data-bs-content="Chọn Customer nếu bạn là người đăng kiểm bán hàng, employee nếu bạn thích và User nếu bạn là người mua hàng, Manager nếu bạn là người quản lý"><i
+                                class="fa-solid fa-circle-question fa-beat" style="color: #919191;"></i></a></a></span>
+                        <div class="col-12 pd-0-12 mb-2">
+                            <select class="form-control email mb-2" v-model="register_user.user_type">
+                                <option value="1">Manager</option>
+                                <option value="2">Customer</option>
+                                <option value="3">Employee</option>
+                                <option value="4" selected>User</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer " style="justify-content: center">
+                        <button type="button" class="btn btn-success" @click="register"><span v-if="isLoading == false">Đăng ký</span>
+                            <div v-else-if="isLoading == true" class="spinner-border spinner-border-sm"
+                                 role="status"></div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div name="right" class="righter">
+    <span><i class="fa-solid fa-envelope fa-bounce" data-bs-toggle="tooltip" data-bs-placement="left"
+             title="Contact us!"></i></span>
+        <span><i class="fa-solid fa-phone-volume fa-beat" data-bs-toggle="tooltip" data-bs-placement="left"
+                 title="Call me!"></i></span>
+    </div>
+    <div name="footer" class="footer pd-12 fixed-bottom">
+        <div class="row col-12 mx-auto">
+            <div class="col-1 align-items-center d-flex flex-column pd-12">
+                <img src="{% static 'image/icon/icon_footer_1.svg' %}">
+                <h6 class="" style="text-align: center; padding: 12px 0 0 0;">Thanh toán khi nhận hàng</h6>
+            </div>
+            <div class="col-1 align-items-center d-flex flex-column pd-12">
+                <img src="{% static 'image/icon/icon_footer_2.svg' %}">
+                <h6 class="" style="text-align: center; padding: 12px 0 0 0;">Now Free 2H</h6>
+            </div>
+            <div class="col-1 align-items-center d-flex flex-column pd-12">
+                <img src="{% static 'image/icon/icon_footer_3.svg' %}">
+                <h6 class="" style="text-align: center; padding: 12px 0 0 0;">14 ngày đổi trả miễn phí</h6>
+            </div>
+            <div class="col-1 align-items-center d-flex flex-column pd-12">
+                <img src="{% static 'image/icon/icon_footer_4.svg' %}">
+                <h6 class="" style="text-align: center; padding: 12px 0 0 0;">Thương hiệu uy tín toàn cầu</h6>
+            </div>
+            <div class="col-4 pd-12 row d-flex">
+                <div class="btn-footer-left col-6">
+                    <p>
+                        <i class="fa-regular fa-circle-question"></i>
+                        Khiếu nại, góp ý
+                    </p>
+                    <p>
+                        18097XXX
+                    </p>
+                </div>
+                <div class="btn-footer-right col-6">
+                    <p>
+                        <i class="fa-sharp fa-solid fa-phone-volume"></i>
+                        Tư vấn
+                    </p>
+                    <p>
+                        19357XXX
+                    </p>
+                </div>
+            </div>
+            <div class="col pd-12">
+                <div class="contact" style="height: 100%">
+                    <p>Copyright © 2017 All rights reserved by Sateraito Office inc.</p>
+                    <p>The content herein will be updated withouth any notification. Please kindly contact us for more
+                        details.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var url_api = "{% url 'login' %}"
+</script>
+<script src="{% static 'js/login.js' %}">
+</script>
+{% endblock %}

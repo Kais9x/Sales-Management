@@ -1,0 +1,350 @@
+{% extends "sales/head.html" %}
+{% load static %}
+{% block content %}
+<style>
+    .footer {
+        display: none;
+    }
+
+    input:focus, textarea:focus {
+        outline: none;
+    }
+
+    input, textarea {
+        border: none;
+        border-bottom: 1px solid darkgrey;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .1), 0 2px 4px rgba(0, 0, 0, .1);
+        border-radius: 6px;;
+        padding: 10px;
+    }
+
+    input[type="text"]:focus {
+        border-color: #1b74e4;
+        box-shadow: 0 0 0 2px #e7f3ff;
+        caret-color: #1b74e4;
+        border-radius: 6px;
+    }
+
+    textarea[type="text"]:focus {
+        border-color: #1b74e4;
+        box-shadow: 0 0 0 2px #e7f3ff;
+        caret-color: #1b74e4;
+        border-radius: 6px
+    }
+</style>
+<div id="warehouses">
+    <div name="header" class="header d-flex sticky-top">
+        <div class=" col-12 col-xl-9 mx-auto d-flex justify-content-start align-items-center text-black pd-12">
+            <button class="btn btn-primary h-40" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#staticBackdrop"
+                    aria-controls="staticBackdrop" style="height: 40px;">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop"
+                 aria-labelledby="staticBackdropLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="staticBackdropLabel"><img class="h-40"
+                                                                              src="{% static 'image/logo/logo_sate.png' %}">
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="list-group list-group-flush mb-5">
+                        <button type="button" class="list-group-item list-group-item-action d-flex" aria-current="true"
+                                style="justify-content: space-between;">
+                            Home
+                            <i class="fa-solid fa-arrow-right fa-shake"></i>
+                        </button>
+                        <button type="button" class="list-group-item list-group-item-action d-flex" aria-current="true"
+                                style="justify-content: space-between;">
+                            Product portfolio
+                            <i class="fa-solid fa-arrow-right fa-shake"></i>
+                        </button>
+                        <button type="button" class="list-group-item list-group-item-action d-flex" aria-current="true"
+                                style="justify-content: space-between;">
+                            Cart
+                            <i class="fa-solid fa-arrow-right fa-shake"></i>
+                        </button>
+                        <button type="button" class="list-group-item list-group-item-action d-flex" aria-current="true"
+                                style="justify-content: space-between;">
+                            Hotline: +84985166472
+                            <i class="fa-solid fa-arrow-right fa-shake"></i>
+                        </button>
+                    </div>
+
+                    <div class="contact">
+                        <p>Copyright © 2017 All rights reserved by Sateraito Office inc.</p>
+                        <p>The content herein will be updated withouth any notification. Please kindly contact us for
+                            more
+                            details.</p>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-lg text-black col">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <a class="navbar-brand" href="#">
+                            <img class="h-40" src="{% static 'image/logo/logo_sate.png' %}">
+                        </a>
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="circle-icon"><i class="fa-sharp fa-solid fa-user-tie"></i></span>
+                                    Login / Register
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li class="mb-2"><p>Login with</p></li>
+                                    <li class="mb-2 line-bot">
+                                        <div class="d-flex pd-bot-12">
+                                            <a class="dropdown-item w-100 p-0" href="#"
+                                               style="padding: 0px; margin-right: 12px;">
+                                                <button class="btn btn-primary btn-fb w-100">
+                                                    <span><i class="fa-brands fa-facebook"></i></span>
+                                                    <span>Facebook</span></span>
+                                                </button>
+                                            </a>
+                                            <a class="dropdown-item w-100 p-0" href="#" style="padding: 0px">
+                                                <button class="btn btn-danger btn-gg w-100">
+                                                    <span><i class="fa-brands fa-google"></i></span>
+                                                    <span>Google</span></span>
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="mb-2"><p>Or login with Sateraito Office</p></li>
+                                    <li class="mb-2"><a class="dropdown-item w-100 p-0" href="#" style="padding: 0px">
+                                        <button class="btn btn-success w-100">Login</button>
+                                    </a></li>
+                                    <li style="height: 20px;"><a class="" href="#" style="font-size: 12px;">Register
+                                        now</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><span class="circle-icon"><i
+                                        class="fa-solid fa-store"></i></span> Shop system</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><span class="circle-icon"><i
+                                        class="fa-solid fa-headset"></i></span> Customer support</a>
+                            </li>
+                            <li class="nav-item" style="position: relative;">
+                                <a class="nav-link" href="#"><span class="circle-icon"><i
+                                        class="fa-solid fa-cart-shopping"></i></span></a>
+                                <span class="counter_number">2</span>
+                            </li>
+                            <li class="nav-item" hidden>
+                                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-success btn-outline-success text-white" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="container" style="padding-bottom: 72px; background: #fefff9;">
+        <div class="d-flex flex-column col-12">
+            <div class="d-flex col-12 pd-12">
+                <div class="col-3">
+                    <label class="label-name-input">
+                        Hình ảnh sản phẩm <i
+                            data-bs-toggle="popover" data-bs-trigger="hover focus"
+                            data-bs-content="Click để tải hình ảnh sản phẩm của bạn lên"
+                            class="fa-solid fa-circle-info" style=""></i>
+                    </label>
+                </div>
+            </div>
+            <div class="col-12 mx-auto pd-12" style="position: relative;">
+                <div class="upload-example__reset-button" title="Reset Image" @click="reset()">
+                    <i class="fa-solid fa-rotate"></i>
+                </div>
+                <div class="col-12 row">
+                    <div v-if="image.src" class="col-8">
+                        <input class="d-none" ref="file" type="file" accept="image/&" @change="loadImage($event)"/>
+                        <div class="upload-example__cropper-wrapper">
+                            <span class="upload-example__upload-icon" style=""><i class="fa-solid fa-upload"></i></span>
+                            <cropper ref="cropper" class="upload-example__cropper"
+                                     :resizeImage="{ height: 424 }"
+                                     :style="{ height: '424px' }"
+                                     :stencil-props="{
+                            aspectRatio: 1
+                         }"
+                                     @change="onChange"
+                                     check-orientation :src="image.src"/>
+                        </div>
+                    </div>
+                    <div v-else="" class="col-8" @click="$refs.file.click()">
+                        <input class="d-none" ref="file" type="file" accept="image/*" @change="loadImage($event)"/>
+                        <div class="upload-example__cropper-wrapper">
+                            <span class="upload-example__upload-icon" style=""><i class="fa-solid fa-upload"></i></span>
+                            <cropper ref="cropper" class="upload-example__cropper"
+                                     :stencil-props="{
+                            aspectRatio: 1
+                         }"
+                                     @change="onChange"
+                                     check-orientation :src="image.src"/>
+                        </div>
+                    </div>
+                    <img class="example_img col" :src="result">
+                </div>
+                <div class="upload-example__buttons-wrapper">
+                    <button class="upload-example__button" @click="$refs.file.click()">
+                        <input class="d-none" ref="file" type="file" accept="image/*" @change="loadImage($event)"/>
+                        Upload image
+                    </button>
+                </div>
+            </div>
+            <div class="d-flex col-12 pd-12">
+                <div class="col-3">
+                    <label class="label-name-input" for="commodity_name">
+                        Tên sản phẩm <i
+                            data-bs-toggle="popover" data-bs-trigger="hover focus"
+                            data-bs-content="Tên sản phẩm đầy đủ sẽ dễ dàng cho đưa sản phẩm của bạn tới người dùng dễ dàng hơn"
+                            class="fa-solid fa-circle-info" style=""></i>
+                    </label>
+                </div>
+                <input class="col" type="text" name="commodity_name" id="commodity_name" v-model="goods.name"
+                       placeholder="Tên sản phẩm + Tên nhãn hàng(Nếu có) + Loại sản phẩm + Mã sản phẩm(bắt buộc)">
+            </div>
+            <div class="d-flex col-12 pd-12">
+                <div class="col-3">
+                    <label class="label-name-input" for="goods_type">
+                        Loại sản phẩm <i
+                            data-bs-toggle="popover" data-bs-trigger="hover focus"
+                            data-bs-content="Phân loại sản phẩm để tránh cho hàng của bạn k tìm thấy được"
+                            class="fa-solid fa-circle-info" style=""></i>
+                    </label>
+                </div>
+                <input class="col" type="text" name="goods_type" id="goods_type" v-model="goods.type"
+                       placeholder="Ghi rõ loại sản phẩm để dễ dang phân loại">
+            </div>
+            <div class="d-flex col-12 pd-12">
+                <div class="col-3">
+                    <label class="label-name-input" for="trademark">
+                        Nhãn hàng <i
+                            data-bs-toggle="popover" data-bs-trigger="hover focus"
+                            data-bs-content="Nhãn hàng của sản phẩm là gì"
+                            class="fa-solid fa-circle-info" style=""></i>
+                    </label>
+                </div>
+                <input class="col" type="text" name="trademark" id="trademark" v-model="goods.brand"
+                       placeholder="Ghi rõ tên nhãn hàng (Nếu có)">
+            </div>
+            <div class="d-flex col-12 pd-12">
+                <div class="col-3">
+                    <label class="label-name-input" for="description">
+                        Mô tả <i
+                            data-bs-toggle="popover" data-bs-trigger="hover focus"
+                            data-bs-content="Ghi mô tả cơ bản về sản phẩm để người dùng hiểu rõ về sản phẩm của bạn hơn"
+                            class="fa-solid fa-circle-info" style=""></i>
+                    </label>
+                </div>
+                <textarea class="col" type="text" name="description" id="description" v-model="goods.description"
+                          style="min-height: 218px;"
+                          placeholder="Mô tả chi tiết về sản phẩm"></textarea>
+            </div>
+            <div class="d-flex col-12 pd-12">
+                <div class="col-3">
+                    <label class="label-name-input" for="price">
+                        Giá sản phẩm <i
+                            data-bs-toggle="popover" data-bs-trigger="hover focus"
+                            data-bs-content="Đơn giá sử dụng là Việt Nam Đồng"
+                            class="fa-solid fa-circle-info" style=""></i>
+                    </label>
+                </div>
+                <input class="col" type="text" name="price" id="price" v-model="goods.price"
+                       placeholder="1.000.000 VND">
+            </div>
+            <div class="d-flex col-12 pd-12">
+                <div class="col-3">
+                    <label class="label-name-input" for="count">
+                        Số lượng <i
+                            data-bs-toggle="popover" data-bs-trigger="hover focus"
+                            data-bs-content="Số lượng sản phẩm bạn có trong kho"
+                            class="fa-solid fa-circle-info" style=""></i>
+                    </label>
+                </div>
+                <input class="col" type="text" name="count" id="count" v-model="goods.quantity"
+                       placeholder="Số sản phẩm bạn có trong kho">
+            </div>
+        </div>
+        <div class="col-12" style="text-align: center;">
+            <template v-if="isLoading == false">
+                <button class="btn btn-primary w-auto mx-auto" @click="addGoods()">Thêm sản phẩm</button>
+            </template>
+            <template v-else>
+                <button class="btn btn-primary w-auto mx-auto" type="button" disabled>
+                    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                    Loading...
+                </button>
+            </template>
+        </div>
+        <div hidden="hidden">
+            <li>
+                <span>User info: </span><span id="data-userInfo">{{user}}</span>
+            </li>
+        </div>
+    </div>
+    <div name="right" class="righter">
+    <span><i class="fa-solid fa-envelope fa-bounce" data-bs-toggle="tooltip" data-bs-placement="left"
+             title="Contact us!"></i></span>
+        <span><i class="fa-solid fa-phone-volume fa-beat" data-bs-toggle="tooltip" data-bs-placement="left"
+                 title="Call me!"></i></span>
+    </div>
+    <div name="footer" class="footer pd-12 fixed-bottom">
+        <div class="row col-12 mx-auto">
+            <div class="col-1 align-items-center d-flex flex-column pd-12">
+                <img src="{% static 'image/icon/icon_footer_1.svg' %}">
+                <h6 class="" style="text-align: center; padding: 12px 0 0 0;">Thanh toán khi nhận hàng</h6>
+            </div>
+            <div class="col-1 align-items-center d-flex flex-column pd-12">
+                <img src="{% static 'image/icon/icon_footer_2.svg' %}">
+                <h6 class="" style="text-align: center; padding: 12px 0 0 0;">Now Free 2H</h6>
+            </div>
+            <div class="col-1 align-items-center d-flex flex-column pd-12">
+                <img src="{% static 'image/icon/icon_footer_3.svg' %}">
+                <h6 class="" style="text-align: center; padding: 12px 0 0 0;">14 ngày đổi trả miễn phí</h6>
+            </div>
+            <div class="col-1 align-items-center d-flex flex-column pd-12">
+                <img src="{% static 'image/icon/icon_footer_4.svg' %}">
+                <h6 class="" style="text-align: center; padding: 12px 0 0 0;">Thương hiệu uy tín toàn cầu</h6>
+            </div>
+            <div class="col-4 pd-12 row d-flex">
+                <div class="btn-footer-left col-6">
+                    <p>
+                        <i class="fa-regular fa-circle-question"></i>
+                        Khiếu nại, góp ý
+                    </p>
+                    <p>
+                        18097XXX
+                    </p>
+                </div>
+                <div class="btn-footer-right col-6">
+                    <p>
+                        <i class="fa-sharp fa-solid fa-phone-volume"></i>
+                        Tư vấn
+                    </p>
+                    <p>
+                        19357XXX
+                    </p>
+                </div>
+            </div>
+            <div class="col pd-12">
+                <div class="contact" style="height: 100%">
+                    <p>Copyright © 2017 All rights reserved by Sateraito Office inc.</p>
+                    <p>The content herein will be updated withouth any notification. Please kindly contact us for more
+                        details.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{% static 'js/warehouses.js' %}">
+</script>
+{% endblock %}
